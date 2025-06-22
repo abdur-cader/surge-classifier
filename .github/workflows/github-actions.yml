@@ -1,0 +1,58 @@
+name: CI/CD Pipeline
+run-name: ${{ github.actor }} is running the CI pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Echo - Workflow trigger info
+      run: |
+        echo "Job triggered by event: ${{ github.event_name }}"
+        echo "Running on OS: ${{ runner.os }}"
+        echo "Branch: ${{ github.ref }}"
+        echo "Repository: ${{ github.repository }}"
+
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Successful clone
+      run: echo "Repository has been cloned successfully"
+
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        echo "Dependencies installed"
+
+    - name: Uvicorn smoke test
+      run: |
+        echo "Launching uvicorn as a smoke test"
+        uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload &
+
+    - name: Testing endpoint
+      run: |
+        curl -f http://localhost:8000/
+
+    - name: Test predict
+      run: |
+        curl -f -X POST http://localhost:8000/predict \
+          -H "Content-Type: application/json" \
+          -f '{"model_choice": "xgb", "features": [2026, 5, 26, 12983, "Saturday", "Yes", 1, 0, 121, 9841, 0.98372, 0.103827]}'
+          
+
+    - name: Echo - CI done
+      run: echo "CI pipeline completed successfully"
