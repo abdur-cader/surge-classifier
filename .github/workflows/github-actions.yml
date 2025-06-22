@@ -53,6 +53,17 @@ jobs:
           -H "Content-Type: application/json" \
           -f '{"model_choice": "xgb", "features": [2026, 5, 26, 12983, "Saturday", "Yes", 1, 0, 121, 9841, 0.98372, 0.103827]}'
           
-
     - name: Echo - CI done
       run: echo "CI pipeline completed successfully"
+
+    - name: Render Deployment
+      env: 
+        RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+        RENDER_SERVICE_ID: ${{ secrets.RENDER_SERVICE_ID }}
+      run: |
+        curl -f -X POST https://api.render.com/deploy/${RENDER_SERVICE_ID} \
+        -H "Authorization: Bearer ${RENDER_API_KEY}" \
+        -H "Accept: application/json"
+
+    - name: CI/CD Pipleline complete
+      run: echo "CI/CD Pipeline successfully fulfilled"
