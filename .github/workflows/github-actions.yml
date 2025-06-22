@@ -38,6 +38,17 @@ jobs:
         pip install -r requirements.txt
         echo "Dependencies installed"
 
+    - name: Check and free port 8000
+      run: |
+        echo "Checking if port 8000 is in use..."
+        if sudo lsof -i :8000; then
+          echo "Port 8000 is busy, killing the process using it..."
+          sudo fuser -k 8000/tcp
+        else
+          echo "Port 8000 is free"
+        fi
+
+
     - name: Uvicorn smoke test
       run: |
         echo "Launching uvicorn as a smoke test"
