@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+env/
+.env
+*.key
+*.pem
+
+
+# Data & Models
+data/raw/
+*.pkl
+*.csv
+
+# MLflow
+mlruns/
+
+# Docker & Compose
+*.tar
+*.bak
+*.gz
+*.swp
+docker-compose.override.yml
+.dockerignore

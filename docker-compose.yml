@@ -1,0 +1,10 @@
+version: '3.9'
+
+services:
+  ml-api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data # optional: map local data folder into container
+    restart: unless-stopped
