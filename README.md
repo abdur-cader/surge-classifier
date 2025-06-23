@@ -22,10 +22,15 @@ Num of features: `12`
 ---
 ## Usage
 
-Workflow file: .github/workflows/github-actions.yml
-**Note:** For this program to work, you will need to load certain models and a preprocessor which are not included specifically in this repository. You may find them from the source project right [here](https://github.com/abdur-cader/surge-predictor/tree/main/data/models)
+Workflow file: `.github/workflows/github-actions.yml`
+- **Note:** For this program to work, you will need to load certain models and a preprocessor which are not included specifically in this repository. You may find them from the source project right [here](https://github.com/abdur-cader/surge-predictor/tree/main/data/models)
 1. Download `xgb_model.pkl`, `cb_model.pkl`, `lgb_model.pkl`, and `preprocessor.pkl`.
 2. Store them in a folder called `data/`, located at the root of this repository.
+
+To Run: 
+```bash
+docker-compose up --build
+```
 
 ## Deployment
 The app is deployed on Render.
