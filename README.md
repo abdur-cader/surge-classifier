@@ -5,15 +5,6 @@
 
 This project is an extension of [Surge Predictor](https://github.com/abdur-cader/surge-predictor) — designed for deployment using Docker, MLflow, FastAPI and Render.
 
-## Features
-
-✅ Machine learning surge level classification (Random Forest, XGBoost, LightGBM, CatBoost)  
-✅ FastAPI + Uvicorn for serving predictions as a REST API  
-✅ MLflow for model tracking and experiment management  
-✅ Dockerized for easy containerization and deployment  
-✅ CI/CD pipeline with GitHub Actions  
-✅ Deployed live on Render  
-
 ## Tech Stack
 
 - Python
