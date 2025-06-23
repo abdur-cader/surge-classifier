@@ -5,30 +5,6 @@
 
 This project is an extension of [Surge Predictor](https://github.com/abdur-cader/surge-predictor) — designed for deployment using Docker, MLflow, FastAPI and Render.
 
-## Project Structure
-```
-.
-│   LICENSE
-│   main.py
-│   README.md
-│   requirements.txt
-│   Dockerfile
-│   .github/workflows/ci.yml
-│
-├───data
-│   │   train.xlsx
-│   └───models
-│           model.pkl
-│           preprocessor.pkl
-│
-├───app
-│       api.py
-│       mlflow_setup.py
-│
-└───helpers
-        training.py
-        utils.py
-```
 ## Features Used for Prediction
 _With example row_
 
