@@ -3,7 +3,7 @@
 
 ## Overview
 
-This project is a *semi-*\extension of [Surge Predictor](https://github.com/abdur-cader/surge-predictor) — designed for deployment using Docker, MLflow, FastAPI and Render.
+This project is a variant of [Surge Predictor](https://github.com/abdur-cader/surge-predictor) — designed for deployment using Docker, MLflow, FastAPI and Render.
 
 ## Features Used for Prediction
 _With example row_
