@@ -5,18 +5,8 @@
 
 This project is an extension of [Surge Predictor](https://github.com/abdur-cader/surge-predictor) — designed for deployment using Docker, MLflow, FastAPI and Render.
 
-## Tech Stack
-
-- Python
-- scikit-learn, XGBoost, LightGBM, CatBoost
-- FastAPI, Uvicorn
-- MLflow
-- Docker
-- GitHub Actions (CI/CD)
-- Render (deployment)
-
 ## Project Structure
-
+```
 .
 │   LICENSE
 │   main.py
@@ -38,7 +28,7 @@ This project is an extension of [Surge Predictor](https://github.com/abdur-cader
 └───helpers
         training.py
         utils.py
-
+```
 ## Features Used for Prediction
 _With example row_
 
