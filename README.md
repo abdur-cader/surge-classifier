@@ -3,7 +3,7 @@
 
 ## Overview
 
-This project is an extension of [Surge Predictor](https://github.com/abdur-cader/surge-predictor) — designed for deployment using Docker, MLflow, FastAPI and Render.
+This project is a *semi-*\extension of [Surge Predictor](https://github.com/abdur-cader/surge-predictor) — designed for deployment using Docker, MLflow, FastAPI and Render.
 
 ## Features Used for Prediction
 _With example row_
@@ -26,6 +26,7 @@ Workflow file: `.github/workflows/github-actions.yml`
 - **Note:** For this program to work, you will need to load certain models and a preprocessor which are not included specifically in this repository. You may find them from the source project right [here](https://github.com/abdur-cader/surge-predictor/tree/main/data/models)
 1. Download `xgb_model.pkl`, `cb_model.pkl`, `lgb_model.pkl`, and `preprocessor.pkl`.
 2. Store them in a folder called `data/`, located at the root of this repository.
+3. Certain lines have been commented out in the workflow file to prevent pipeline errors due to missing models. You can uncomment them once the above steps are complete.
 
 To Run: 
 ```bash
